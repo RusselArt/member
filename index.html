@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>長鼻愛樂會員查詢系統</title>
+  <style>
+    body {
+      font-family: "微軟正黑體", sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f8f9fa;
+    }
+    h1 {
+      font-size: 32px;
+      color: #333;
+    }
+    p {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 250px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #1d3557;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #457b9d;
+    }
+  </style>
+</head>
+<body>
+  <h1>長鼻愛樂會員查詢系統</h1>
+  <p>請填入會員卡號</p>
+  <input type="text" id="memberID" placeholder="例如：RA-0022">
+  <br>
+  <button onclick="redirect()">查詢</button>
+
+  <script>
+    function redirect() {
+      const id = document.getElementById("memberID").value.trim();
+      if (id) {
+        const url = "https://russelart.github.io/qr/?id=" + encodeURIComponent(id);
+        window.location.href = url;
+      } else {
+        alert("請輸入會員卡號！");
+      }
+    }
+  </script>
+</body>
+</html>
